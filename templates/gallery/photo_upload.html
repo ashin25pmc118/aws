@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container" style="margin-top: 80px;">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-white text-center fw-bold py-3">Create New Post</div>
+                <div class="card-body">
+                    <div class="text-center mb-4">
+                        <i class="bi bi-images" style="font-size: 3rem;"></i>
+                        <p class="lead">Drag photos here</p>
+                    </div>
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <div class="d-grid gap-2 mt-4">
+                            <button type="submit" class="btn btn-primary">Share</button>
+                            <a href="{% url 'home' %}" class="btn btn-link text-decoration-none text-muted">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,190 @@
+body {
+    background-color: #fafafa;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #262626;
+}
+
+.navbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #dbdbdb;
+    box-shadow: none;
+    height: 60px;
+}
+
+.navbar-brand {
+    font-family: 'Grand Hotel', cursive;
+    /* Instagram logoish font if available, fallback to cursive */
+    font-size: 28px;
+    color: #262626 !important;
+}
+
+.nav-link {
+    color: #262626 !important;
+    font-weight: 500;
+}
+
+.card {
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.card-header {
+    background-color: transparent;
+    border-bottom: 1px solid #dbdbdb;
+    font-weight: 600;
+}
+
+/* Auth Pages */
+.auth-card {
+    margin-top: 50px;
+    border: 1px solid #dbdbdb;
+    background: #fff;
+    padding: 10px;
+}
+
+.btn-primary {
+    background-color: #0095f6;
+    border-color: #0095f6;
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background-color: #0081d6;
+    border-color: #0081d6;
+}
+
+/* Gallery Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-top: 30px;
+}
+
+.gallery-item {
+    position: relative;
+    cursor: pointer;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.2s;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    border-radius: 15px;
+}
+
+/* Rounded corners for images and containers */
+.card-img-top,
+.gallery-image {
+    border-radius: 15px;
+    object-fit: cover;
+    /* Use cover to fill the box nicely, contain if strict visibility needed */
+}
+
+.gallery-item {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Detail view image fit */
+.dateil-image-container img {
+    object-fit: contain;
+    max-height: 80vh;
+    border-radius: 20px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card,
+.gallery-item {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .navbar {
+    background-color: #000000;
+    border-bottom: 1px solid #333;
+}
+
+body.dark-mode .navbar-brand,
+body.dark-mode .nav-link,
+body.dark-mode .btn-link {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .card {
+    background-color: #000000;
+    border: 1px solid #333;
+}
+
+body.dark-mode .card-header,
+body.dark-mode .card-footer {
+    background-color: #000000 !important;
+    border-color: #333 !important;
+    color: #e0e0e0;
+}
+
+body.dark-mode .form-control {
+    background-color: #262626;
+    border-color: #333;
+    color: #e0e0e0;
+}
+
+body.dark-mode .text-muted {
+    color: #a0a0a0 !important;
+}
+
+body.dark-mode .dropdown-menu {
+    background-color: #262626;
+    border-color: #333;
+}
+
+body.dark-mode .dropdown-item {
+    color: #e0e0e0;
+}
+
+body.dark-mode .dropdown-item:hover {
+    background-color: #333;
+}
